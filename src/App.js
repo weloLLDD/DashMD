@@ -21,6 +21,9 @@ import DepenseScreen from "./screens/depenseScreen";
 import DepenseEditScreen from "./screens/DepenseEditScreen";
 import AddDepense from "./screens/AddDepense";
 import InvoiceAll from "./screens/InvoiceAll";
+import ArchivesAll from "./screens/ArchivesAll";
+import InsertArchive from "./screens/InsertArchive";
+import DashboardALL from "./screens/DashboardALL";  
 import InvoiceAlls from "./screens/InvoiceAlls";
 
 
@@ -63,6 +66,13 @@ function App() {
             <Route path="/Invoice" element={<InvoiceAll />} />
              <Route path="/Invoices" element={<InvoiceAlls/>} />
 
+
+            <Route path="/ArchivesAll" element={<ArchivesAll />} />
+            <Route path="/InsertArchive" element={<InsertArchive />} />
+            <Route path="/DashboardALL" element={<DashboardALL/>} /> 
+
+
+            
 
             <Route path="*" element={<NotFound />} />
           </Route>

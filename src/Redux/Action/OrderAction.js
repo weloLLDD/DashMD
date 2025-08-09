@@ -20,7 +20,7 @@ export const listOrders = () => async (dispatch, getState) => {
       body: JSON.stringify(userInfo),
     };
 
-    const { data } = await axios.get(`https://backenmd.onrender.com/api/orders/all`, config);
+    const { data } = await axios.get(`/api/orders/all`, config);
     dispatch({ type:ORDER_LIST_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -64,7 +64,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       body: JSON.stringify(userInfo),
     };
 
-    const { data } = await axios.get(`https://backenmd.onrender.com/api/orders/${id}`, config);
+    const { data } = await axios.get(`/api/orders/${id}`, config);
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
 
   } catch (error) {

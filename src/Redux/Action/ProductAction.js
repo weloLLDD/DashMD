@@ -20,7 +20,7 @@ export const listProduct = () => async (dispatch, getState) => {
        
       };
   
-      const { data } = await axios.get("https://backenmd.onrender.com/api/products/all", config);
+      const { data } = await axios.get("/api/products/all", config);
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
   
     } catch (error) {
@@ -57,7 +57,7 @@ export const listProduct = () => async (dispatch, getState) => {
         body: JSON.stringify(userInfo),
       };
   
-      await axios.delete(`https://backenmd.onrender.com/api/products/${id}`, config);
+      await axios.delete(`/api/products/${id}`, config);
       dispatch({ type: PRODUCT_DELETE_SUCCESS});
   
     } catch (error) {
@@ -94,7 +94,7 @@ export const listProduct = () => async (dispatch, getState) => {
         body: JSON.stringify(userInfo),
       };
   
-      const {data} = await axios.post(`https://backenmd.onrender.com/api/products/`,{name,image, description,price,countInStock}, config);
+      const {data} = await axios.post(`/api/products/`,{name,image, description,price,countInStock}, config);
       dispatch({ type: PRODUCT_CREATE_SUCCESS,payload:data});
   
     } catch (error) {
@@ -117,7 +117,7 @@ export const listProduct = () => async (dispatch, getState) => {
 export const editProduct = (id) => async(dispatch) =>{
   try {
       dispatch({type:PRODUCT_EDIT_REQUEST})
-      const {data} = await axios.get(`https://backenmd.onrender.com/api/products/${id}`);
+      const {data} = await axios.get(`/api/products/${id}`);
       dispatch({type:PRODUCT_EDIT_SUCCESS,
           payload: data
       });
@@ -159,7 +159,7 @@ export const editProduct = (id) => async(dispatch) =>{
         body: JSON.stringify(userInfo),
       };
   
-      const {data} = await axios.put(`https://backenmd.onrender.com/api/products/${product._id}`,product, config);
+      const {data} = await axios.put(`/api/products/${product._id}`,product, config);
       dispatch({ type: PRODUCT_UPDATE_SUCCESS,payload:data});
       dispatch({ type: PRODUCT_EDIT_SUCCESS,payload:data});
   

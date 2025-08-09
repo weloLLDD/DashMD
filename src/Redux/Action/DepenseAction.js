@@ -35,7 +35,7 @@ export const listDepense = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get("https://backenmd.onrender.com/api/depense", config);
+    const { data } = await axios.get("/api/depense", config);
     console.log("Données reçues du backend:", data);
     dispatch({ type: DEPENSE_LIST_SUCCESS, payload: data.depenses });
   } catch (error) {
@@ -71,7 +71,7 @@ export const deleteDepense = (id) => async (dispatch, getState) => {
       body: JSON.stringify(userInfo),
     };
 
-    await axios.delete(`https://backenmd.onrender.com/api/depense/${id}`, config);
+    await axios.delete(`/api/depense/${id}`, config);
     dispatch({ type: DEPENSE_DELETE_SUCCESS });
   } catch (error) {
     const message =
@@ -108,7 +108,7 @@ export const createDepense =
       };
 
       const { data } = await axios.post(
-        `https://backenmd.onrender.com/api/depense/`,
+        `/api/depense/`,
         { name, montant, description },
         config
       );
@@ -133,7 +133,7 @@ export const createDepense =
 export const editDepense = (id) => async (dispatch) => {
   try {
     dispatch({ type: DEPENSE_EDIT_REQUEST });
-    const { data } = await axios.get(`https://backenmd.onrender.com/api/depense/${id}`);
+    const { data } = await axios.get(`/api/depense/${id}`);
     dispatch({ type: DEPENSE_EDIT_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -169,7 +169,7 @@ export const updateDepense = (depense) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `https://backenmd.onrender.com/api/depense/${depense._id}`,
+      `/api/depense/${depense._id}`,
       depense,
       config
     );
