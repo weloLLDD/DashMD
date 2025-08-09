@@ -122,8 +122,36 @@ const Sidebar = () => {
                     Rapport mensuel de ventes
                   </NavLink>
                 </li>
- 
-              
+
+           
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    className="submenu-link"
+                    to="/InsertArchive"
+                  >
+                   InsertArchive
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    className="submenu-link"
+                    to="/ArchivesAll"
+                  >
+                    ArchivesAAll
+                  </NavLink>
+                </li>
+
+                   <li>
+                  <NavLink
+                    activeClassName="active"
+                    className="submenu-link"
+                    to="/DashboardALL"
+                  >
+                     DashboardALL
+                  </NavLink>
+                </li>
                 
               </ul>
             </li>
