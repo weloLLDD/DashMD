@@ -86,7 +86,7 @@ export const listUser = () => async (dispatch, getState) => {
       body: JSON.stringify(userInfo),
     };
 
-    const { data } = await axios.get(`api/users`, config);
+    const { data } = await axios.get(`https://backenmd.onrender.comapi/users`, config);
     dispatch({ type: USER_LIST_SUCCESS, payload: data });
 
   } catch (error) {
